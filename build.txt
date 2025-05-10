@@ -1,3 +1,0 @@
-docker build -t safiyu/jellyfinfix:latest .
-docker tag latest safiyu/jellyfinfix:latest
-docker push safiyu/jellyfinfix:latest
