@@ -39,7 +39,12 @@ find . -type d -exec bash -c '
 		fi
         done' bash {} +
 
-jfurl="$JF_URL/library/refresh?api_key=$JF_API_KEY"
-echo "Calling jellyfin endpoint: $jfurl"
+if [ -z "$JF_URL" ] || [ -z "$JF_API_KEY" ]; then
+    echo "JF_URL and JF_API_KEY must be set to call jellyfin api"
+    exit 1
+else
+    jfurl="$JF_URL/library/refresh?api_key=$JF_API_KEY"
+    echo "Calling jellyfin endpoint: $jfurl"
 
-curl -s -S -d "" -w "jellyfin library refresh completed with http_code:%{http_code}\\n" -H "Accept: application/json" "$jfurl"
+    curl -s -S -d "" -w "jellyfin library refresh completed with http_code:%{http_code}\\n" -H "Accept: application/json" "$jfurl"
+fi
