@@ -17,7 +17,7 @@ find . -type d -exec bash -c '
                 if [[ "$subdircount" -eq 1 ]]
                 then
 					if [ -f "$full_path" ]; then
-					  echo "$dir is upto date."
+					  echo "$dir is up to date."
 					else
 					  echo "$dir - No video file exists. creating $full_path"
 					  touch "$full_path"
