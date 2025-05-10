@@ -1,7 +1,7 @@
 services:
   jellyfix:
     container_name: jellyfix
-    image: safiyu/jellyfinfix:latest
+    image: ghcr.io/sphexi/jellifinflix:main
     volumes:
       - /share/Media:/media:rw
     environment:
