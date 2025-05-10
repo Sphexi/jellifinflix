@@ -6,8 +6,6 @@ VOLUME /media
 RUN apk add --no-cache bash figlet curl
 COPY . /app
 
-ENV CRON_STRING="0 */6 * * *"
-
 RUN chmod +x /app/entry.sh
 RUN chmod +x /app/cron.sh
 RUN chmod -R a+x /app/crontab
