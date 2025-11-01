@@ -8,4 +8,4 @@ RUN chmod +x /app/cron.sh
 RUN chmod -R a+x /app/crontab
 RUN chmod -R a+x /app/scripts.d
 
-ENTRYPOINT ["sh","/app/cron.sh"]
+ENTRYPOINT ["bash","/app/cron.sh"]
