@@ -6,7 +6,7 @@
 set -euo pipefail
 shopt -s nocasematch  # case-insensitive regex match
 
-DELETE=0  # Set to 1 to actually delete files, 0 for dry-run
+DELETE=1  # Set to 1 to actually delete files, 0 for dry-run
 TARGET_DIR="."
 
 # Find subtitle files (case-insensitive), handle spaces/newlines safely.
