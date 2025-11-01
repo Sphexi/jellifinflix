@@ -23,7 +23,7 @@ for script in "$SCRIPTS_DIR"/*.sh; do
         cd "$TARGET_DIR"
         chmod +x "$script_name"
         echo "Running $script_name..."
-        ./ "$script_name"
+        ./"$script_name"
     )
 
     # Remove after execution
