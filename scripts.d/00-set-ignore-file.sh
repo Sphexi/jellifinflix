@@ -14,7 +14,7 @@ while IFS= read -r -d '' dir; do
   full_path="$dir/.ignore"
 
   # Does this directory (recursively) contain ANY video file?
-  if find "$dir" -type f \( "${is_video_expr[@]}" \) -print -quit >/dev/null 2>&1; then
+  if find "$dir" -type f \( "${is_video_expr[@]}" \) -print -quit 2>/dev/null | grep -q .; then
     # Video(s) present — ensure .ignore is removed
     if [[ -f "$full_path" ]]; then
       rm -f -- "$full_path"
